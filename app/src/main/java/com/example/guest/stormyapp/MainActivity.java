@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        else {
+            Toast.makeText(this, R.string.network_unavailable_message, Toast.LENGTH_LONG).show();
+        }
         Log.d(TAG, "Main UI code is running!");
 
     
@@ -72,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
         ConnectivityManager manager = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()) {
+            isAvailable = true;
+        }
+
+        return isAvailable;
     }
 
     private void alertUserAboutError() {
