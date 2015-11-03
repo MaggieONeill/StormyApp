@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateDisplay() {
         mTemperatureLabel.setText(mCurrentWeather.getTemperature() + "");
+        mTimeLabel.setText("At " + mCurrentWeather.getFormattedTime() + " it will be");
+        mHumidityValue.setText(mCurrentWeather.getHumidity() + "");
+        mPrecipValue.setText(mCurrentWeather.getPrecipChance() + "%");
     }
 
     private CurrentWeather getCurrentDetails(String jsonData) throws JSONException {
