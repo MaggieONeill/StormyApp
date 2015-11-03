@@ -24,12 +24,15 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+
     private CurrentWeather mCurrentWeather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         String apiKey = "0a21ee7fb1bbbead6a13b3077b50e93e";
         double latitude = 37.8267;
