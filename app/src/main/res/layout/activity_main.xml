@@ -52,5 +52,14 @@
         android:textColor="@android:color/white"
         android:textSize="24sp"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconImageView"
+        android:layout_alignBottom="@+id/locationLabel"
+        android:layout_toLeftOf="@+id/temperatureLabel"
+        android:layout_toStartOf="@+id/temperatureLabel"
+        android:src="@drawable/cloudy_night"/>
+
 
 </RelativeLayout>
